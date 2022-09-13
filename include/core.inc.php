@@ -1,6 +1,6 @@
 <?php
 function connectToDb(){
-	$link = mysqli_connect("127.0.0.1", "root", "furente", "gestionale_sett2022");
+	$link = mysqli_connect("127.0.0.1", "root", "", "gestionale_sett2022");
 
 
 	if (!$link) {
@@ -11,6 +11,27 @@ function connectToDb(){
 	}
 
 	return $link;
+}
+
+function ottieni_data_serata_attuale(){
+	$link = connectToDb();
+
+	$query = "SELECT * FROM Serata WHERE inizializzata = 1";
+
+	if(($res = mysqli_query($link, $query))){
+		if(mysqli_num_rows($res)==1){
+			$row = mysqli_fetch_assoc($res);
+			return $row['data'];
+		}
+		else {
+			return -1;
+		}
+	}
+	else{
+		return 0;
+	}
+
+	disconnetti_mysql($link);
 }
 
 

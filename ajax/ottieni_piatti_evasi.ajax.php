@@ -18,6 +18,8 @@
 										'quantita' => $row['nr'],
 										'tavolo'=> $row['tavolo'],
 										'indice' => $row['indice'],
+										'ora_produzione' => $row['ora_produzione'],
+										'ora_evasione' => $row['ora_evasione'],
 										'idprg'=>$row['idprogrammazione']));
 		}
 	}

@@ -16,7 +16,7 @@
 				$idprog=$p['idprg'];
 				$num=$p['num'];
 
-				$query = 	"UPDATE programmazioneordini AS prog SET stato=3
+				$query = 	"UPDATE programmazioneordini AS prog SET stato=3, ora_evasione=CURRENT_TIMESTAMP()
 							WHERE prog.tavolo=$tavolo
 							AND prog.indice=$indice
 							AND prog.portata=$piatto 

@@ -25,7 +25,7 @@
 					$tavolo = $p["tavolo"];
 					$indice = $p["indice"];
 					$piatto="'".$p["portata"]."'";
-					$query = 	"UPDATE programmazioneordini SET stato=2 , idprogrammazione=$id_prog
+					$query = 	"UPDATE programmazioneordini SET stato=2 , idprogrammazione=$id_prog, ora_produzione=CURRENT_TIMESTAMP()
 								WHERE id=(
 								SELECT prog.id FROM (select * from programmazioneordini) AS prog
 								WHERE prog.tavolo=$tavolo

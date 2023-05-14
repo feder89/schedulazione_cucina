@@ -23,6 +23,7 @@
 											'indice' => $row['indice'],
 											'idprg' => $row['idprogrammazione'],
 											'filter' => $idx,
+											'ora_produzione' => $row['ora_produzione'],
 											'nr' => $row['quant']));
 			}  
 		}

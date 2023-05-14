@@ -102,12 +102,16 @@ function showPortateInModalProduzione(portate){
 		var text='<table class="table table-sm table-striped" >'
           +'<thead><tr><th scope="col">Select</th>'
           				+'<th scope="col">Portata</th>'
+						+'<th scope="col">Ora Prod.</th>'
           				+'<th scope="col">Quantità</th>'
           				+'</tr></thead><tbody>';
 		
 		$.each(arr, function(i, value){
 			text+='<tr><td><input type="checkbox"/></td><td>'
 					+ value.portata
+					+'</td>'
+					+'<td>'
+					+ value.ora_produzione
 					+'</td>'
 					+'<td class="d-none">'+value.tavolo+'</td>'
 					+'<td class="d-none">'+value.indice+'</td>'
@@ -285,6 +289,8 @@ function loadHistoryProducted(){
 					+'<td>'+value.indice+'</td>'
 					+'<td>'+value.portata+'</td>'
 					+'<td>'+value.quantita+'</td>'
+					+'<td>'+value.ora_produzione+'</td>'
+					+'<td>'+value.ora_evasione+'</td>'
 					+'</tr>';
 					$('#history-table  tbody').append(text);
 			});

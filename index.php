@@ -80,6 +80,8 @@
               <th scope="col">Indice</th>
               <th scope="col">Portata</th>
               <th scope="col">Quantità</th>
+              <th scope="col">Ora Prod.</th>
+              <th scope="col">Ora Evaso</th>
             </tr>
           </thead>
           <tbody>

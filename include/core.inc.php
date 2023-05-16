@@ -1,6 +1,6 @@
 <?php
 function connectToDb(){
-	$link = mysqli_connect("127.0.0.1", "root", "", "gestionale_sett2022");
+	$link = mysqli_connect("127.0.0.1", "root", "", "gestionale_giu2023");
 
 
 	if (!$link) {

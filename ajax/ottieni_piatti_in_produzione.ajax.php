@@ -10,18 +10,17 @@
 		GROUP BY portata, tavolo, indice
 		ORDER BY FIELD(categoria, 'primo','secondo','contorno')";
 
-			$result = mysqli_query($link, $query) or die("#error#".mysqli_error($link));
-			while ($row = mysqli_fetch_assoc($result)) {
-				$idx= $row['tavolo']."/".$row['indice'];
-				array_push($portate, array(	'portata' => $row['portata'],
-											'tavolo' => $row['tavolo'],
-											'indice' => $row['indice'],
-											'idprg' => $row['idprogrammazione'],
-											'filter' => $idx,
-											'ora_produzione' => $row['ora_produzione'],
-											'nr' => $row['quant']));
-			}  
-		}
+		$result = mysqli_query($link, $query) or die("#error#".mysqli_error($link));
+		while ($row = mysqli_fetch_assoc($result)) {
+			$idx= $row['tavolo']."/".$row['indice'];
+			array_push($portate, array(	'portata' => $row['portata'],
+										'tavolo' => $row['tavolo'],
+										'indice' => $row['indice'],
+										'idprg' => $row['idprogrammazione'],
+										'filter' => $idx,
+										'ora_produzione' => $row['ora_produzione'],
+										'nr' => $row['quant']));
+		}  
 	}
 
 	disconnetti_mysql($link, NULL); #visto che non ho un result_set gli passo NULL.. nella funzione in core.in.php ho aggiunto il controllo

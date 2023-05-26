@@ -6,7 +6,7 @@
 		$idprg=$_POST['idprg'];
 		$query="SELECT *,count(*) as quant 
 		FROM programmazioneordini 
-		WHERE idprogrammazione=$idprg AND stato = 2
+		WHERE idprogrammazione=$idprg AND stato = 2 AND categoria IN ('primo','secondo','contorno')
 		GROUP BY portata, tavolo, indice
 		ORDER BY FIELD(categoria, 'primo','secondo','contorno')";
 

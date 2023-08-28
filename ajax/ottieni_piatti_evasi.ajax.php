@@ -17,7 +17,6 @@
 										'ora_evasione' => $row['ora_evasione'],
 										'idprg'=>$row['idprogrammazione']));
 		}
-	}
 
 	disconnetti_mysql($link, NULL); #visto che non ho un result_set gli passo NULL.. nella funzione in core.in.php ho aggiunto il controllo
 

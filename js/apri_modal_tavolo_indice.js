@@ -102,23 +102,23 @@ function showPortateInModalProduzione(portate){
 		var text='<table class="table table-sm table-striped" >'
           +'<thead><tr><th scope="col">Select</th>'
           				+'<th scope="col">Portata</th>'
-						+'<th scope="col">Ora Prod.</th>'
           				+'<th scope="col">Quantità</th>'
+						+'<th scope="col">Ora Prod.</th>'						
           				+'</tr></thead><tbody>';
 		
 		$.each(arr, function(i, value){
 			text+='<tr><td><input type="checkbox"/></td><td>'
 					+ value.portata
-					+'</td>'
-					+'<td>'
-					+ value.ora_produzione
-					+'</td>'
+					+'</td>'					
 					+'<td class="d-none">'+value.tavolo+'</td>'
 					+'<td class="d-none">'+value.indice+'</td>'
 					+'<td class="d-none">'+value.idprg+'</td>'
 					+'<td data-quant="'+value.nr+'"><select class="custom-select custom-select-sm" id="quant-portata-prod">'
 					+generateSelectOptions(value.nr)
 					+'</select></td>'
+					+'<td>'
+					+ value.ora_produzione
+					+'</td>'
 					+'</tr>';
 		});
           

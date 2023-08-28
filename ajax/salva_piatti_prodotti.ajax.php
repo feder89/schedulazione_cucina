@@ -11,24 +11,23 @@
 			$idprog=$p['idprg'];
 			$num=$p['num'];
 
-				$query = 	"UPDATE programmazioneordini AS prog SET stato=3, ora_evasione=CURRENT_TIMESTAMP()
-							WHERE prog.tavolo=$tavolo
-							AND prog.indice=$indice
-							AND prog.portata=$piatto 
-							AND prog.idprogrammazione = $idprog
-							AND stato=2
-							AND serata='$date'
-							LIMIT $num" ;
-							/*WHERE id=(
-							SELECT prog.id FROM (select * from programmazioneordini) AS prog
-							
-							LIMIT 1);*/
-				if(!esegui_query($link, $query)){
-					mysqli_rollback($link);
-					disconnetti_mysql($link, NULL);
-					die("#error#".mysqli_error($link));
-				}
+			$query = 	"UPDATE programmazioneordini AS prog SET stato=3, ora_evasione=CURRENT_TIMESTAMP
+						WHERE prog.tavolo=$tavolo
+						AND prog.indice=$indice
+						AND prog.portata=$piatto 
+						AND prog.idprogrammazione = $idprog
+						AND stato=2
+						LIMIT $num" ;
+						/*WHERE id=(
+						SELECT prog.id FROM (select * from programmazioneordini) AS prog
+						
+						LIMIT 1);*/
+			if(!esegui_query($link, $query)){
+				mysqli_rollback($link);
+				disconnetti_mysql($link, NULL);
+				die("#error#".mysqli_error($link));
 			}
+		}
 			if (!mysqli_commit($link)) die("#error#".mysqli_error($link));
 
         disconnetti_mysql($link, NULL);
